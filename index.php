@@ -5,20 +5,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ERROR);
 
-$str = 'sraacecars';
+$jewels = "aA";
+$stones = "aAAbbbb";
 
-function isPolindrome($str)
-{
-    for ($i = 0; $i < strlen($str); $i++) {
-        if (strcasecmp($str[$i], $str[(strlen($str) - 1 - $i)]) == 0) {
-            continue;
-        } else {
-            return 0;
-            break;
+    function numJewelsInStones($jewels, $stones) {
+        $count = 0;
+        for ($i = 0; $i < strlen($jewels); $i++) {
+            $count = $count + substr_count($stones, $jewels[$i]);
         }
-
+        return $count;
     }
-    return true;
-}
 
-print_r(isPolindrome($str));
+
+
+    print_r(numJewelsInStones($jewels, $stones));
