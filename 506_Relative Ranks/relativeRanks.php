@@ -1,18 +1,14 @@
 <?php
-header('Content-Type:text/html;charset=utf-8');
-// Controll Error
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ERROR);
 
-$score = [10,3,8,9,4];
 
     function findRelativeRanks($score) {
+
         arsort($score);
         $arrayPresent = ["Gold Medal","Silver Medal","Bronze Medal"];
         $arraySorted = [];
         $i = 0;
         $count = 1;
+
         foreach ($score as $key => $value) {
 
             if ($i == 0) {
@@ -33,6 +29,3 @@ $score = [10,3,8,9,4];
         ksort($arraySorted);
         return $arraySorted;
     }
-
-
-    print_r(findRelativeRanks($score));
